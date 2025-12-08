@@ -1,0 +1,419 @@
+/* --- Global Reset & Base Styles --- */
+* {
+    /* Kept your original reset */
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Define Variables for easier management */
+:root {
+    --primary-color: #B91C36; 
+    --accent-color: #e53e58; 
+    --background-color: #0d1117; 
+    --text-color: #e4e6eb; 
+    --secondary-text: #8b949e; 
+    --border-radius: 8px;
+    --transition-speed: 0.3s;
+}
+
+
+body {
+    width: 100%;
+    background: var(--background-color);
+    min-height: 100vh;
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+    padding: 0 4%;
+}
+.section-padding {
+    padding: 6rem 0;
+}
+
+h1, h2, h3 {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 80px; /* Increased height for prominence */
+    /* Removed redundant border-bottom from here, moving it to the container for cleaner look */
+    padding: 0; /* Removed padding here to let align-items center work better */
+    align-items: center;
+    border-bottom: 1px solid var(--secondary-text); /* Subtler border */
+    margin: 0 -4%; /* Extend border across the full viewport */
+    padding: 0 4%;
+}
+.logo {
+    /* Style for a potential logo/name */
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: 1px;
+}
+
+
+#ul {
+    display: flex;
+    flex-direction: row;
+    gap: 2.5rem; /* Slightly reduced gap */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#ul li a {
+    text-decoration: none;
+    color: var(--secondary-text); /* Start with subtle color */
+    font-weight: 500;
+    transition: color var(--transition-speed), text-shadow var(--transition-speed);
+}
+
+#ul li a:hover, #ul li a.active {
+    color: var(--accent-color); /* Highlight on hover/active */
+    text-shadow: 0 0 5px var(--primary-color); /* Subtle glow effect */
+}
+
+/* --- Home Section Styling --- */
+#home {
+    /* Use the padding utility class for better section spacing */
+    padding: 8% 0; 
+    display: grid;
+    grid-template-columns: 1.5fr 1fr; /* Info takes slightly more space */
+    align-items: center;
+    min-height: calc(100vh - 80px); /* Fill remaining viewport height */
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* Consistent spacing */
+    padding: 0; /* Removed excessive padding */
+}
+.info h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+}
+.info p {
+    color: var(--secondary-text);
+    font-size: 1.1rem;
+}
+
+.btn {
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color); /* Thicker border */
+    border-radius: 50px; /* Fully rounded 'pill' button */
+    padding: 14px 24px; /* More padding */
+    width: fit-content; /* Only as wide as content */
+    text-decoration: none;
+    text-align: center;
+    font-weight: 600;
+    transition: background var(--transition-speed), color var(--transition-speed), transform var(--transition-speed);
+}
+
+.btn:hover {
+    background: var(--accent-color);
+    color: var(--background-color);
+    transform: translateY(-2px); /* Lift effect */
+    box-shadow: 0 5px 15px rgba(185, 28, 54, 0.4);
+}
+
+.pic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pic .profile-img {
+    width: 100%;
+    max-width: 350px; /* Slightly larger image */
+    height: 350px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 0 40px rgba(185, 28, 54, 0.5); 
+    margin: 0 auto;
+    display: block;
+    border: 4px solid var(--primary-color); 
+}
+
+
+#about {
+    padding: 6rem 0; 
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Text content gets more space */
+    align-items: center;
+    gap: 4rem;
+    border-top: 1px solid var(--secondary-text); /* Separator line */
+    margin: 0 -4%; /* Extend border across the full viewport */
+    padding: 6rem 4%;
+}
+#about h2 {
+    /* Simplified and improved title styling */
+    width: 100%; 
+    padding: 0; 
+    font-size: 2.5rem;
+    text-align: left;
+    display: block;
+    font-weight: 700;
+    color: var(--accent-color);
+    border-left: 5px solid var(--primary-color);
+    padding-left: 15px;
+}
+.abt {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Space between paragraphs */
+}
+.abt p {
+    /* Replaced border with a subtle card background */
+    background: #161b22; 
+    border: 1px solid #30363d; /* Subtler border */
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    line-height: 1.6;
+    color: var(--secondary-text);
+    transition: all 0.4s ease-in-out;
+}
+.abt p:hover {
+    background: var(--primary-color); /* Pop on hover */
+    color: var(--background-color); /* Dark text on bright background */
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(185, 28, 54, 0.3);
+}
+
+/* --- Skills Section Styling --- */
+#skills {
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem; /* Increased gap for better separation */
+}
+#skills h2, #projects h2 {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+}
+
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjusted min size */
+    gap: 1.5rem;
+}
+
+.skill-card {
+    border: 1px solid #30363d;
+    background: #161b22;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed), border-color var(--transition-speed);
+}
+
+.skill-card:hover {
+    transform: translateY(-8px); /* Deeper lift */
+    box-shadow: 0 15px 35px rgba(185, 28, 54, 0.2);
+    border-color: var(--accent-color);
+}
+
+.skill-card h3 {
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+.skill-card p {
+    color: var(--secondary-text);
+}
+
+
+/* --- Projects Section Styling --- */
+#projects {
+    padding-top: 4rem;
+    padding-bottom: 8rem; /* More padding at the bottom */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed), border-color var(--transition-speed);
+    text-align: left; /* Align content inside card left */
+}
+
+.project-card:hover {
+    transform: translateY(-12px); /* More pronounced lift */
+    box-shadow: 0 20px 40px rgba(185, 28, 54, 0.3);
+    border-color: var(--primary-color);
+}
+
+.project-img {
+    width: 100%;
+    height: 250px; 
+    background: linear-gradient(135deg, var(--primary-color) 0%, #a02840 100%); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    font-size: 1.5rem; /* Smaller font for placeholder text */
+    font-weight: 600;
+}
+
+.project-content {
+    padding: 1.5rem;
+}
+
+.project-content h3 {
+    color: var(--text-color); /* Main text color */
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+.project-content p {
+    color: var(--secondary-text);
+}
+
+/* --- Footer or Contact Section Placeholder --- */
+/* Add a simple footer or contact section styling here for completeness */
+footer {
+    padding: 2rem 0;
+    text-align: center;
+    border-top: 1px solid #30363d;
+    margin: 0 -4%;
+    color: var(--secondary-text);
+    font-size: 0.9rem;
+}
+
+/* --- Media Queries (Optional but recommended) --- */
+@media (max-width: 900px) {
+    #home, #about {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+    }
+
+    #about h2 {
+        text-align: center;
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 1rem 4%;
+        gap: 1rem;
+    }
+}
+
+#contact {
+    /* Full width padding as used in other sections */
+    padding: 6rem 4%; 
+    text-align: center;
+    border-top: 1px solid var(--secondary-text);
+    /* Negative margin to pull the border across the full width */
+    margin: 0 -4%; 
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 3rem;
+}
+
+.contact-form {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    /* Use a slightly darker background for the form area */
+    background: #11141a; 
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    border: 1px solid #30363d;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 0.8rem;
+    border: 1px solid #30363d;
+    border-radius: var(--border-radius);
+    background: var(--background-color); /* Dark input background */
+    color: var(--text-color);
+    font-size: 1rem;
+    transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--accent-color);
+    outline: none;
+    box-shadow: 0 0 5px rgba(185, 28, 54, 0.5);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.submit-btn {
+    /* Inherit the existing button styles */
+    align-self: flex-start;
+    cursor: pointer;
+    font-size: 1rem;
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color); 
+    border-radius: 50px; 
+    padding: 14px 24px; 
+    width: fit-content; 
+    text-decoration: none;
+    text-align: center;
+    font-weight: 600;
+    transition: background var(--background-color), color var(--transition-speed), transform var(--transition-speed);
+}
+
+.submit-btn:hover {
+    background: var(--accent-color);
+    color: var(--background-color);
+    transform: translateY(-2px); 
+    box-shadow: 0 5px 15px rgba(185, 28, 54, 0.4);
+}
+.footer-links a,.social-links a{
+    text-decoration: none;
+}
+.footer-links a{
+    color: var(--text-color);
+}
