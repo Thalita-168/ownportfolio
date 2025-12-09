@@ -178,8 +178,8 @@ h1, h2, h3 {
     transition: all 0.4s ease-in-out;
 }
 .abt p:hover {
-    background: var(--primary-color); /* Pop on hover */
-    color: var(--background-color); /* Dark text on bright background */
+    background: var(--primary-color); 
+    color: var(--background-color); 
     border-color: var(--primary-color);
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(185, 28, 54, 0.3);
